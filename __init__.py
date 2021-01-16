@@ -1,4 +1,4 @@
-import os
+mport os
 import functools
 import json
 import sys
@@ -23,6 +23,7 @@ from flask import (Blueprint, Flask, flash, g, redirect, render_template,request
 #Last Updated: Jan 12, 2021
 #Date Created: Jan 5, 2021
 #Purpose: A web-based app that processes and reorders a given Spotify Playlist, determined by feature analysis from Spotify's web API
+
 #For the purpose of this repo, dev credentials and redirect uri's are ommited from this file
 #Class API for Spotify Web interaction
 class SpotifyAPI(object):
@@ -225,13 +226,15 @@ class SpotifyAPI(object):
     def extract_audio_features(self,ids):
         endpoint = 'https://api.spotify.com/v1/audio-features'
         headers = self.get_auth_access_header()
-        query_params = urlencode({'ids':ids})
+        id_string = ','.join(ids)
+        query_params = {'ids':id_string}
+        print(query_params)
         lookup_url = f"{endpoint}?{query_params}"
-        print(lookup_url)
-        r = requests.get(lookup_url,headers=headers)
+       # print(lookup_url)
+        r = requests.get(endpoint,headers=headers,params=query_params)
         return self.process_request(r)
 
-    #Function that retrieve's a list ofthe client's playlists
+    #Function that retrieve's a list of the client's playlists
     def get_playlists(self):    #Create separte functions for playlist object parsing
         playlists = self.get_user_playlist_list()
         playlists = playlists['items']
@@ -241,7 +244,7 @@ class SpotifyAPI(object):
         for tracks in tracklist:
             track = tracks['track']
             track_ids.append(track['id'])
-        #print(track_ids)    #Test code to check if print works
+        print(track_ids)    #Test code to check if print works
         return self.extract_audio_features(track_ids)
 
     #Helper function that fetches the displayed username of a client

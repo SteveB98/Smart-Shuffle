@@ -1,0 +1,21 @@
+name: SmartShuffle
+
+channels:
+  - defaults
+  - conda-forge
+
+dependencies:
+  - python=3.7.*
+  - pip=19.2.*
+  - numpy=1.17.*
+  - scipy==1.4.1.*
+  - matplotlib=3.1.*
+  - ipython=7.8.*
+  - jupyter=1.0.*
+  - pandas=1.0.*
+  - scikit-learn=1.0.*
+  - ffmpeg=2.8.*
+  - numba=0.45.*
+  - jupyter_contrib_nbextensions=0.5.*
+ 
+    

@@ -33,7 +33,7 @@ After successful completion, you will be taken to the final page that will displ
 ---
 ## Installation Instructions
 1. Clone this project
-2. Setup a local directory for executable creation
+2. Setup a local directory, titled "flaskr", and insert all files except for folders and smartshufflesetup.py
 3. Setup a programming environment via Anaconda or a similar bash shell with the repository's .YML file
 4. You must set up a Spotify Developer account with your own user ID and secret key, which must be updated in __init__.py
 5. Run smartshufflesetup.py on localhost or set it up on an alternative hosting platform i.e. PythonAnywhere

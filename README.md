@@ -23,5 +23,6 @@ This project was done for an academic project in coordination with a computer sc
 ## Installation Instructions
 1. Clone this project
 2. Setup a local directory for executable creation
-3. Setup a programming environment via Anaconda or similar with repositories .YML file
-4. Run __init__.py on localhost or an alternative hosting platform i.e. PythonAnywhere
+3. Setup a programming environment via Anaconda or a similar bash shell with the repository's .YML file
+4. You must set up a Spotify Developer account with your own user ID and secret key, which must be updated in __init__.py
+5. Run smartshufflesetup.py on localhost or set it up on a alternative hosting platform i.e. PythonAnywhere
